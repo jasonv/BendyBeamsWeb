@@ -2,8 +2,8 @@
 <html>
     <head>
         <title>swiped-events demo</title>
-        <meta name=“viewport” content=“width=device-width,height=device-height,user-scalable=no,initial-scale=1,maximum-scale=1” />
-        <script src=“swiped-events.js”></script>
+        <meta name="viewport" content="width=device-width,height=device-height,user-scalable=no,initial-scale=1,maximum-scale=1"/>
+        <script src="swiped-events.js"></script>
         <style>
             body { overflow: hidden; }
             div { 
@@ -36,7 +36,7 @@
 
             window.onload = function() {
 
-                document.addEventListener(‘swiped’, function(e) {
+                document.addEventListener('swiped', function(e) {
                     console.log(e.type);
                     console.log(e.target);
                     console.log(e.detail);
@@ -44,28 +44,28 @@
                     e.target.innerHTML = e.type;
                 });
 
-                document.addEventListener(‘swiped-left’, function(e) {
+                document.addEventListener('swiped-left', function(e) {
                     console.log(e.type);
                     console.log(e.target);
                     console.log(e.detail);
                     e.target.innerHTML = e.type;
                 });
 
-                document.addEventListener(‘swiped-right’, function(e) {
+                document.addEventListener('swiped-right', function(e) {
                     console.log(e.type);
                     console.log(e.target);
                     console.log(e.detail);
                     e.target.innerHTML = e.type;
                 });
 
-                document.addEventListener(‘swiped-up’, function(e) {
+                document.addEventListener('swiped-up', function(e) {
                     console.log(e.type);
                     console.log(e.target);
                     console.log(e.detail);
                     e.target.innerHTML = e.type;
                 });
 
-                document.addEventListener(‘swiped-down’, function(e) {
+                document.addEventListener('swiped-down', function(e) {
                     console.log(e.type);
                     console.log(e.target);
                     console.log(e.detail);
@@ -75,7 +75,7 @@
             }
         </script>
     </head>
-    <body data-swipe-threshold=“100”>
+    <body data-swipe-threshold='100'>
         <div>Swipe me</div>
         <div>or me</div>
     </body>
