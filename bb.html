@@ -19,57 +19,49 @@
                 align-items: center;
                 justify-content: center;
             }
-            div:first-child {
-                top: 0px;
-                bottom: 100%;
-                background: #191919;
-                color: #eee;
-            }
+    
         </style>
+    </head>
+    <body data-swipe-threshold='100'>
+        <div>
+        <canvas 
+            id="myCanvas" 
+            width="400" 
+            height="400" 
+            style="border:1px solid #d3d3d3;">
+            Your browser does not support the HTML canvas tag.
+        </canvas>
+        </div>
         <script>
-
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+            ctx.font = "30px Arial";
             window.onload = function() {
-
                 document.addEventListener('swiped', function(e) {
-                    console.log(e.type);
-                    console.log(e.target);
-                    console.log(e.detail);
-                    console.log(e.dir);
-                    e.target.innerHTML = e.type;
+                    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
+                    ctx.fillText(e.type, 10, 50);
                 });
 
                 document.addEventListener('swiped-left', function(e) {
-                    console.log(e.type);
-                    console.log(e.target);
-                    console.log(e.detail);
-                    e.target.innerHTML = e.type;
+                    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
+                    ctx.fillText(e.type, 10, 50);
                 });
 
                 document.addEventListener('swiped-right', function(e) {
-                    console.log(e.type);
-                    console.log(e.target);
-                    console.log(e.detail);
-                    e.target.innerHTML = e.type;
+                    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
+                    ctx.fillText(e.type, 10, 50);
                 });
 
                 document.addEventListener('swiped-up', function(e) {
-                    console.log(e.type);
-                    console.log(e.target);
-                    console.log(e.detail);
-                    e.target.innerHTML = e.type;
+                    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
+                    ctx.fillText(e.type, 10, 50);
                 });
 
                 document.addEventListener('swiped-down', function(e) {
-                    console.log(e.type);
-                    console.log(e.target);
-                    console.log(e.detail);
-                    e.target.innerHTML = e.type;
+                    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
+                    ctx.fillText(e.type, 10, 50);
                 });
-
             }
         </script>
-    </head>
-    <body data-swipe-threshold='100'>
-        <div>Swipe me</div>
     </body>
 </html>
