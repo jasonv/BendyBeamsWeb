@@ -36,37 +36,43 @@
             var c = document.getElementById("myCanvas");
             var ctx = c.getContext("2d");
             ctx.font = "30px Arial";
+            var x = 10;
+            var y = 50; 
             window.onload = function() {
                 document.addEventListener('swiped', function(e) {
                     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
-                    ctx.fillText(e.type, 10, 50);
+                    ctx.fillText(e.type, x, y);
                 });
 
                 document.addEventListener('swiped-left', function(e) {
+                    x=x-10;
                     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
-                    ctx.fillText(e.type, 10, 50);
+                    ctx.fillText(e.type, x, y);
                 });
 
                 document.addEventListener('swiped-right', function(e) {
+                    x=x+10;
                     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
-                    ctx.fillText(e.type, 10, 50);
+                    ctx.fillText(e.type, x, y);
                 });
 
                 document.addEventListener('swiped-up', function(e) {
+                    y=y-10;
                     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
-                    ctx.fillText(e.type, 10, 50);
+                    ctx.fillText(e.type, x, y);
                 });
 
                 document.addEventListener('swiped-down', function(e) {
+                    y=y+10;
                     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
-                    ctx.fillText(e.type, 10, 50);
+                    ctx.fillText(e.type, x, y);
                 });
             }
             function checkKey(e)
             {
                 e = e || window.event;
                 ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
-                ctx.fillText(e.keyCode, 10, 50);
+                ctx.fillText(e.keyCode, x, y);
             }
             document.onkeydown = checkKey;
         </script>
