@@ -62,6 +62,13 @@
                     ctx.fillText(e.type, 10, 50);
                 });
             }
+            function checkKey(e)
+            {
+                e = e || window.event;
+                ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
+                ctx.fillText(e.keyCode, 10, tp);
+            }
+            document.onkeydown = checkKey;
         </script>
     </body>
 </html>
