@@ -37,42 +37,49 @@
             var ctx = c.getContext("2d");
             ctx.font = "30px Arial";
             var x = 10;
-            var y = 50; 
+            var y = 50;
+            function moveLeft()
+            {
+                x=x-10;
+                ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
+                ctx.fillText("LEFT", x, y);
+            }
+            function moveRight()
+            {
+                x=x+10;
+                ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
+                ctx.fillText("RIGHT", x, y);
+            }
+            function moveUp()
+            {
+                y=y-10;
+                ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
+                ctx.fillText("UP", x, y);
+            }
+            function moveDown()
+            {
+                y=y+10;
+                ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
+                ctx.fillText("DOWN", x, y);
+            } 
             window.onload = function() {
                 document.addEventListener('swiped', function(e) {
                     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
                     ctx.fillText(e.type, x, y);
                 });
-
-                document.addEventListener('swiped-left', function(e) {
-                    x=x-10;
-                    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
-                    ctx.fillText(e.type, x, y);
-                });
-
-                document.addEventListener('swiped-right', function(e) {
-                    x=x+10;
-                    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
-                    ctx.fillText(e.type, x, y);
-                });
-
-                document.addEventListener('swiped-up', function(e) {
-                    y=y-10;
-                    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
-                    ctx.fillText(e.type, x, y);
-                });
-
-                document.addEventListener('swiped-down', function(e) {
-                    y=y+10;
-                    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
-                    ctx.fillText(e.type, x, y);
-                });
+                document.addEventListener('swiped-left', function(e) {moveLeft(); });
+                document.addEventListener('swiped-right', function(e) {moveRight(); });
+                document.addEventListener('swiped-up', function(e) {moveUp(); });
+                document.addEventListener('swiped-down', function(e) {moveDown(); });
             }
             function checkKey(e)
             {
                 e = e || window.event;
                 ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
-                ctx.fillText(e.keyCode, x, y);
+                if(e.keyCode==37) {moveLeft();}
+                if(e.keyCode==39) {moveRight();}
+                if(e.keyCode==38) {moveUp();}
+                if(e.keyCode==40) {moveDown();}
             }
             document.onkeydown = checkKey;
         </script>
