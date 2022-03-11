@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width,height=device-height,user-scalable=no,initial-scale=1,maximum-scale=1"/>
         <script src="swiped-events.js"></script>
         <style>
-            body { overflow: hidden; }
+            body { overflow: hidden; background-color: black;}
             div { 
                 position: fixed;
                 left: 0;
@@ -24,11 +24,12 @@
     </head>
     <body data-swipe-threshold='100'>
         <div>
+        <img id="ppp" src="/img/ppp.png" style="display:none">
         <canvas 
             id="myCanvas" 
-            width="400" 
-            height="400" 
-            style="border:1px solid #d3d3d3;">
+            width="220" 
+            height="220" 
+            style="border:1px solid gray; background-color: black;">
             Your browser does not support the HTML canvas tag.
         </canvas>
         </div>
@@ -36,31 +37,34 @@
             var c = document.getElementById("myCanvas");
             var ctx = c.getContext("2d");
             ctx.font = "30px Arial";
-            var x = 10;
-            var y = 50;
+            var ppp = document.getElementById("ppp");
+            var x = 0;
+            var y = 0;
+            ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
+            ctx.drawImage(ppp, x, y);
             function moveLeft()
             {
-                x=x-10;
+                if(x>0) x=x-20;
                 ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
-                ctx.fillText("LEFT", x, y);
+                ctx.drawImage(ppp, x, y);
             }
             function moveRight()
             {
-                x=x+10;
+                if(x<200) x=x+20;
                 ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
-                ctx.fillText("RIGHT", x, y);
+                ctx.drawImage(ppp, x, y);
             }
             function moveUp()
             {
-                y=y-10;
+                if(y>0) y=y-20;
                 ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
-                ctx.fillText("UP", x, y);
+                ctx.drawImage(ppp, x, y);
             }
             function moveDown()
             {
-                y=y+10;
+                if(y<200) y=y+20;
                 ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
-                ctx.fillText("DOWN", x, y);
+                ctx.drawImage(ppp, x, y);
             } 
             window.onload = function() {
                 document.addEventListener('swiped', function(e) {
