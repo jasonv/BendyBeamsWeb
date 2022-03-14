@@ -1,4 +1,4 @@
-[
+const levels = [
     {
         "id": "2011-05-20",
         "num": "1",
@@ -764,4 +764,35 @@
             "######   ###      ###   ######   "
         ]
     }
-]
+];
+
+function getLevel(n)
+{
+    let result = [];
+    let clj = levels[n].level;
+    for(let y=0; y<clj.length; y++)
+    {
+        let rs = clj[y];
+        let row = [];
+        for(let x=0; x<11; x++)
+        { 
+            let offset=x*3;
+            let item = rs.substring(offset+0,offset+3);
+            row.push(item);
+        }
+        result.push(row);
+    }
+    return result;
+}
+
+function drawLevel()
+{
+      let level = getLevel(0);
+    for(let y=0; y<11; y++)
+    {
+        for(let x=0; x<11; x++)
+        {
+            ctx.drawImage(ppp, x*20, y*20);
+        }
+    }
+}
