@@ -787,7 +787,7 @@ function getLevel(n)
 
 function getImage(level,xx,yy)
 {
-    let id = level[x][y];
+    let id = level[xx][yy];
     if(id=="###")
     {
         id="sss";
