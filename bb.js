@@ -785,14 +785,25 @@ function getLevel(n)
     return result;
 }
 
+function getImage(level,xx,yy)
+{
+    let id = level[x][y];
+    if(id=="###")
+    {
+        id="sss";
+    }
+    return document.getElementById(id);    
+}
+
 function drawLevel()
 {
-      let level = getLevel(0);
+    let level = getLevel(0);
     for(let y=0; y<11; y++)
     {
         for(let x=0; x<11; x++)
         {
-            ctx.drawImage(ppp, x*20, y*20);
+            let img = getImage(level,x,y);
+            ctx.drawImage(img, x*20, y*20);
         }
     }
 }
