@@ -766,6 +766,22 @@ const levels = [
     }
 ];
 
+function loadImages()
+{
+    var ids = ["PPP","ZZZ","SSS"];
+    for(const id of ids)
+    {
+        img[id] = document.getElementById(id);
+        img[id].addEventListener('load', function() {
+            imgCount++;
+            console.log(id + ":" + imgCount);
+        }, false);
+    }
+    console.log("images loaded");
+}
+
+
+
 function getLevel(n)
 {
     let result = [];
@@ -785,25 +801,33 @@ function getLevel(n)
     return result;
 }
 
-function getImage(level,xx,yy)
+function getImageId(level,xx,yy)
 {
-    let id = level[xx][yy];
-    if(id=="###")
-    {
-        id="sss";
-    }
-    return document.getElementById(id);    
+    let id = level[yy][xx];
+    if(id=="   ") id="SSS";
+    if(id=="###") id="ZZZ";
+    if(id=="(P)") id="SSS";
+    return id;
+}
+
+function getImage(id)
+{
+    let image = img[id];
+    console.log("getImage id:"+id+" image:"+image);
+    return image;
 }
 
 function drawLevel()
 {
-    let level = getLevel(0);
+    let level = getLevel(44);
     for(let y=0; y<11; y++)
     {
         for(let x=0; x<11; x++)
         {
-            let img = getImage(level,x,y);
-            ctx.drawImage(img, x*20, y*20);
+            let id = getImageId(level,x,y);
+            console.log(id);
+            ctx.drawImage(getImage(id), x*20, y*20);
         }
     }
+    console.log("done");
 }
