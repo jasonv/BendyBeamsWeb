@@ -24,6 +24,7 @@
                 justify-content: center;
             }
             h1 {
+                padding-top: 15px;
                 font-family: 'Press Start 2P', cursive;
                 text-align: center;
                 color: gray;
@@ -37,7 +38,7 @@
         <div> 
         <img id="CER" src="/img/cer.png" style="display:none"/>
         <img id="CERO" src="/img/cero.png" style="display:none"/>
-        <img id="CNO" src="/img/cnr.png" style="display:none"/>
+        <img id="CNR" src="/img/cnr.png" style="display:none"/>
         <img id="CNRO" src="/img/cnro.png" style="display:none"/>
         <img id="CSR" src="/img/csr.png" style="display:none"/>
         <img id="CSRO" src="/img/csro.png" style="display:none"/>
@@ -80,6 +81,7 @@
         </canvas>
         </div><script>
             console.log("script start");
+            var levelNum=1;
             var c = document.getElementById("myCanvas");
             var ctx = c.getContext("2d");
             var imgCount = 0;
@@ -91,7 +93,7 @@
             
 function loadImages()
 {
-    var ids = ["PPP","ZZZ","SSS"];
+    var ids = ["PPP","ZZZ","SSS","MNE","MSE","MSW","MNW","CNR","CER","CSR","CWR","TNR","TER","TSR","TWR"];
     for(const id of ids)
     {
         img[id] = document.getElementById(id);
@@ -141,13 +143,13 @@ function getImage(id)
 
 function drawLevel()
 {
-    let level = getLevel(44);
+    let level = getLevel(levelNum);
     for(let y=0; y<11; y++)
     {
         for(let x=0; x<11; x++)
         {
             let id = getImageId(level,x,y);
-            //console.log(id);
+            console.log(id);
             ctx.drawImage(getImage(id), x*squareSize, y*squareSize);
         }
     }
@@ -170,7 +172,7 @@ function drawLevel()
                 if(x+dx>=11) return false;
                 if(y+dy<0) return false;
                 if(y+dy>=11) return false;
-                let piece = getLevel(44)[y+dy][x+dx];
+                let piece = getLevel(levelNum)[y+dy][x+dx];
                 console.log(piece);
                 if(piece=="   ") return true;
                 if(piece=="(P)") return true;
