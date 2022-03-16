@@ -1,6 +1,9 @@
 <!doctype>
 <html>
     <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com"> 
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
         <title>swiped-events demo</title>
         <meta name="viewport" content="width=device-width,height=device-height,user-scalable=no,initial-scale=1,maximum-scale=1"/>
         <script src="swiped-events.js"></script>
@@ -20,10 +23,17 @@
                 align-items: center;
                 justify-content: center;
             }
+            h1 {
+                font-family: 'Press Start 2P', cursive;
+                text-align: center;
+                color: gray;
+            }
+            
     
         </style>
     </head>
-    <body data-swipe-threshold='100'>
+    <body data-swipe-threshold='50'>
+      <h1>Bendy Beams</h1>
         <div> 
         <img id="CER" src="/img/cer.png" style="display:none"/>
         <img id="CERO" src="/img/cero.png" style="display:none"/>
@@ -65,7 +75,7 @@
             id="myCanvas" 
             width="220" 
             height="220" 
-            style="width: 80%; border:1px solid gray; background-color: black;">
+            style="height:375px; border:1px solid gray; background-color: black;">
             Your browser does not support the HTML canvas tag.
         </canvas>
         </div><script>
