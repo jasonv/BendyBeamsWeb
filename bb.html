@@ -149,7 +149,7 @@ function drawLevel()
         for(let x=0; x<11; x++)
         {
             let id = getImageId(level,x,y);
-            console.log(id);
+            //console.log(id);
             ctx.drawImage(getImage(id), x*squareSize, y*squareSize);
         }
     }
@@ -178,27 +178,48 @@ function drawLevel()
                 if(piece=="(P)") return true;
                 return false;
             }
+            function spacePushable(dx,dy)
+            {
+                let piece = getLevel(levelNum)[y+dy][x+dx];
+                if(piece[0]='M') return true;
+                return false;
+            }
+            function move(dx,dy)
+            {
+                if(spaceOpen(dx,dy))
+                {
+                    x=x+dx;
+                    y=y+dy;
+                }
+                else if(spacePushable(dx,dy))
+                {
+                    if(spaceOpen(dx+dx,dy+dy))
+                    {
+                        //level[x+dx][dy]
+                    }
+                }
+            }
             function moveLeft()
             {
-                if(spaceOpen(-1,0)) x=x-1;
+                move(-1,0);
                 drawLevel();
                 ctx.drawImage(img["PPP"], x*squareSize, y*squareSize);
             }
             function moveRight()
             {
-                if(spaceOpen(1,0)) x=x+1;
+                move(1,0);
                 drawLevel();
                 ctx.drawImage(img["PPP"], x*squareSize, y*squareSize);
             }
             function moveUp()
             {
-                if(spaceOpen(0,-1)) y=y-1;
+                move(0,-1);
                 drawLevel();
                 ctx.drawImage(img["PPP"], x*squareSize, y*squareSize);
             }
             function moveDown()
             {
-                if(spaceOpen(0,1)) y=y+1;
+                move(0,1);
                 drawLevel();
                 ctx.drawImage(img["PPP"], x*squareSize, y*squareSize);
             } 
