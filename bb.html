@@ -11,14 +11,12 @@
         <style>
             body { overflow: hidden; background-color: #101010;}
             div { 
-                position: fixed;
                 left: 0;
                 right: 0;
                 margin: 0;
                 padding: 0;
                 overflow: hidden;
                 font-size: 40px;
-                font-family: arial;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -29,6 +27,13 @@
                 text-align: center;
                 color: gray;
             }
+            h2 {
+                padding-top: 0px;
+                font-family: 'Press Start 2P', cursive;
+                text-align: center;
+                color: white;
+            }
+            
             
     
         </style>
@@ -79,7 +84,10 @@
             style="height:375px; background-color: black;">
             Your browser does not support the HTML canvas tag.
         </canvas>
-        </div><script>
+        
+        </div>
+        <h2><a href="#" onclick="next();">Next</a></h2>
+        <script>
             console.log("script start");
             var levelNum=3;
             var c = document.getElementById("myCanvas");
@@ -91,6 +99,14 @@
             var curLevel = getLevel(levelNum);
             var squareSize=20;
             console.log("script 2");
+            
+            function next()
+            {
+                levelNum++;
+                curLevel = getLevel(levelNum);
+                drawLevel();
+                ctx.drawImage(img["PPP"], x*squareSize, y*squareSize);
+            }
             
 function loadImages()
 {
