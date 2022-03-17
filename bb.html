@@ -81,13 +81,14 @@
         </canvas>
         </div><script>
             console.log("script start");
-            var levelNum=1;
+            var levelNum=3;
             var c = document.getElementById("myCanvas");
             var ctx = c.getContext("2d");
             var imgCount = 0;
             var img = {}
-            var x = 5;
-            var y = 5;
+            var x = 0;
+            var y = 0;
+            var curLevel = getLevel(levelNum);
             var squareSize=20;
             console.log("script 2");
             
@@ -110,14 +111,19 @@ function getLevel(n)
 {
     let result = [];
     let clj = levels[n].level;
-    for(let y=0; y<clj.length; y++)
+    for(let yy=0; yy<clj.length; yy++)
     {
-        let rs = clj[y];
+        let rs = clj[yy];
         let row = [];
-        for(let x=0; x<11; x++)
+        for(let xx=0; xx<11; xx++)
         { 
-            let offset=x*3;
+            let offset=xx*3;
             let item = rs.substring(offset+0,offset+3);
+            if(item=="(P)")
+            {
+                x=xx;
+                y=yy;
+            }
             row.push(item);
         }
         result.push(row);
@@ -143,12 +149,11 @@ function getImage(id)
 
 function drawLevel()
 {
-    let level = getLevel(levelNum);
     for(let y=0; y<11; y++)
     {
         for(let x=0; x<11; x++)
         {
-            let id = getImageId(level,x,y);
+            let id = getImageId(curLevel,x,y);
             //console.log(id);
             ctx.drawImage(getImage(id), x*squareSize, y*squareSize);
         }
@@ -172,7 +177,7 @@ function drawLevel()
                 if(x+dx>=11) return false;
                 if(y+dy<0) return false;
                 if(y+dy>=11) return false;
-                let piece = getLevel(levelNum)[y+dy][x+dx];
+                let piece = curLevel[y+dy][x+dx];
                 console.log(piece);
                 if(piece=="   ") return true;
                 if(piece=="(P)") return true;
@@ -180,8 +185,8 @@ function drawLevel()
             }
             function spacePushable(dx,dy)
             {
-                let piece = getLevel(levelNum)[y+dy][x+dx];
-                if(piece[0]='M') return true;
+                let piece = curLevel[y+dy][x+dx];
+                if(piece[0]=='M') return true;
                 return false;
             }
             function move(dx,dy)
@@ -195,10 +200,12 @@ function drawLevel()
                 {
                     if(spaceOpen(dx+dx,dy+dy))
                     {
-                        alert(""+y+dy+dy+"+"+x+dx+dx+"");
-                        levels[levelNum].level[y+dy+dy][x+dx+dx]=levels[levelNum].level[y+dy][x+dx];
-                        levels[levelNum].level[y+dy][x+dx]=levels[levelNum].level[y][x];
-                        levels[levelNum].level[y][x]="   ";
+                        curLevel[y+dy+dy][x+dx+dx]=curLevel[y+dy][x+dx];
+                        curLevel[y+dy][x+dx]=curLevel[y][x];
+                        curLevel[y][x]="   ";
+                        
+                        x=x+dx;
+                        y=y+dy;
                     }
                 }
             }
