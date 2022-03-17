@@ -195,7 +195,10 @@ function drawLevel()
                 {
                     if(spaceOpen(dx+dx,dy+dy))
                     {
-                        //level[x+dx][dy]
+                        alert(""+y+dy+dy+"+"+x+dx+dx+"");
+                        levels[levelNum].level[y+dy+dy][x+dx+dx]=levels[levelNum].level[y+dy][x+dx];
+                        levels[levelNum].level[y+dy][x+dx]=levels[levelNum].level[y][x];
+                        levels[levelNum].level[y][x]="   ";
                     }
                 }
             }
