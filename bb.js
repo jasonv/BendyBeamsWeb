@@ -1,8 +1,17 @@
+const messages = ["Woopie","Yes",
+	  "Genious","You the man now dawg",
+	  "Incoseavable","Amazing",
+	  "Halelujha","Glorious",
+	  "Right On","That was boss",
+	  "Fantastic","Wiz Bang",
+	  "Wicked Smart","Smart",
+	  "Geinus","Off the hook",
+	  "Out of this world"];
 const levels = [
     {
         "id": "2011-05-20",
         "num": "1",
-        "message":"",
+        "message":"Awesome",
         "audio":"",
         "level": [
             "#################################",
@@ -21,7 +30,7 @@ const levels = [
     {
         "id": "2016-07-20",
         "num": "2",
-        "message":"",
+        "message":"Super",
         "audio":"",
         "level": [
             "#################################",
@@ -40,7 +49,7 @@ const levels = [
     {
         "id": "2011-05-01",
         "num": "3",
-        "message":"",
+        "message":"Great Job",
         "audio":"",
         "level": [
             "#################################",
@@ -59,7 +68,7 @@ const levels = [
     {
         "id": " 2016-07-15",
         "num": "4",
-        "message":"",
+        "message":"Rock On",
         "audio":"",
         "level": [
             "#################################",
@@ -78,7 +87,7 @@ const levels = [
     {
         "id": "2016-07-20",
         "num": "5",
-        "message":"",
+        "message":"Holy-Cow",
         "audio":"",
         "level": [
             "#################################",
@@ -97,7 +106,7 @@ const levels = [
     {
         "id": "2016-07-20",
         "num": "6",
-        "message":"",
+        "message":"Yippy",
         "audio":"",
         "level": [
             "#################################",
@@ -116,7 +125,7 @@ const levels = [
     {
         "id": "2016-07-20",
         "num": "7",
-        "message":"",
+        "message":"Success",
         "audio":"",
         "level": [
             "#################################",
@@ -135,7 +144,7 @@ const levels = [
     {
         "id": "2011-05-04",
         "num": "8",
-        "message":"",
+        "message":"Hip-Hip-Hurray",
         "audio":"",
         "level": [
             "###TSR###########################",
@@ -154,7 +163,7 @@ const levels = [
     {
         "id": "2016-07-21",
         "num": "9",
-        "message":"",
+        "message":"Oh Yeah",
         "audio":"",
         "level": [
             "########################MSE   MSW",
@@ -173,7 +182,7 @@ const levels = [
     {
         "id": "2016-07-20",
         "num": "10",
-        "message":"",
+        "message":"Who-Ha!",
         "audio":"",
         "level": [
             "#################################",
@@ -192,7 +201,7 @@ const levels = [
     {
         "id": "2011-05-03",
         "num": "11",
-        "message":"",
+        "message":"Hurray",
         "audio":"",
         "level": [
             "#################################",
@@ -211,7 +220,7 @@ const levels = [
     {
         "id": "2011-05-07",
         "num": "12",
-        "message":"",
+        "message":"Shazam",
         "audio":"",
         "level": [
             "#################################",
