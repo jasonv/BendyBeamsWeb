@@ -3,7 +3,7 @@ const levels = [
         "id": "2011-05-20",
         "num": "1",
         "message":"Awesome",
-        "audio":"",
+        "audio":"awesome.mp3",
         "level": [
             "#################################",
             "#################################",
@@ -22,7 +22,7 @@ const levels = [
         "id": "2016-07-20",
         "num": "2",
         "message":"Super",
-        "audio":"",
+        "audio":"super.mp3",
         "level": [
             "#################################",
             "#################################",
@@ -41,7 +41,7 @@ const levels = [
         "id": "2011-05-01",
         "num": "3",
         "message":"Great Job",
-        "audio":"",
+        "audio":"greatjob.mp3",
         "level": [
             "#################################",
             "#################################",
@@ -60,7 +60,7 @@ const levels = [
         "id": " 2016-07-15",
         "num": "4",
         "message":"Awesome",
-        "audio":"",
+        "audio":"awesome.mp3",
         "level": [
             "#################################",
             "#################################",
@@ -79,7 +79,7 @@ const levels = [
         "id": "2016-07-20",
         "num": "5",
         "message":"Super",
-        "audio":"",
+        "audio":"super.mp3",
         "level": [
             "#################################",
             "#################################",
@@ -98,7 +98,7 @@ const levels = [
         "id": "2016-07-20",
         "num": "6",
         "message":"Great Job",
-        "audio":"",
+        "audio":"greatjob.mp3",
         "level": [
             "#################################",
             "#################################",
@@ -117,7 +117,7 @@ const levels = [
         "id": "2016-07-20",
         "num": "7",
         "message":"Awesome",
-        "audio":"",
+        "audio":"awesome.mp3",
         "level": [
             "#################################",
             "#################################",
@@ -136,7 +136,7 @@ const levels = [
         "id": "2011-05-04",
         "num": "8",
         "message":"Super",
-        "audio":"",
+        "audio":"super.mp3",
         "level": [
             "###TSR###########################",
             "###      ########################",
@@ -155,7 +155,7 @@ const levels = [
         "id": "2016-07-21",
         "num": "9",
         "message":"Great Job",
-        "audio":"",
+        "audio":"greatjob.mp3",
         "level": [
             "########################MSE   MSW",
             "########################   ###   ",
@@ -174,7 +174,7 @@ const levels = [
         "id": "2016-07-20",
         "num": "10",
         "message":"Awesome",
-        "audio":"",
+        "audio":"awesome.mp3",
         "level": [
             "#################################",
             "               (P)               ",
@@ -193,7 +193,7 @@ const levels = [
         "id": "2011-05-03",
         "num": "11",
         "message":"Super",
-        "audio":"",
+        "audio":"super.mp3",
         "level": [
             "#################################",
             "######      #########      ######",
@@ -212,7 +212,7 @@ const levels = [
         "id": "2011-05-07",
         "num": "12",
         "message":"Great Job",
-        "audio":"",
+        "audio":"greatjob.mp3",
         "level": [
             "#################################",
             "#########MSE         MSW#########",
@@ -231,7 +231,7 @@ const levels = [
         "id": "2011-05-06",
         "num": "13",
         "message":"Awesome",
-        "audio":"",
+        "audio":"awesome.mp3",
         "level": [
             "#################################",
             "###                           ###",
@@ -250,7 +250,7 @@ const levels = [
         "id": "2011-05-02",
         "num": "14",
         "message":"Super",
-        "audio":"",
+        "audio":"super.mp3",
         "level": [
             "#################################",
             "#################################",
@@ -269,7 +269,7 @@ const levels = [
         "id": "2011-05-08",
         "num": "15",
         "message":"Great Job",
-        "audio":"",
+        "audio":"greatjob.mp3",
         "level": [
             "#################################",
             "###         MSE   MSW         ###",
@@ -288,7 +288,7 @@ const levels = [
         "id": "2011-05-09",
         "num": "16",
         "message":"Shazam",
-        "audio":"",
+        "audio":"shazam.mp3",
         "level": [
             "###############TSR###############",
             "#########               #########",
@@ -307,7 +307,7 @@ const levels = [
         "id": "2011-05-10",
         "num": "17",
         "message":"That was boss",
-        "audio":"",
+        "audio":"thawasboss.mp3",
         "level": [
             "#################################",
             "#################################",
@@ -326,7 +326,7 @@ const levels = [
         "id": "2003-01-01",
         "num": "18",
         "message":"Hurray",
-        "audio":"",
+        "audio":"hurray.mp3",
         "level": [
             "                                 ",
             "   ###                     ###   ",
@@ -345,7 +345,7 @@ const levels = [
         "id": "2003-01-02",
         "num": "19",
         "message":"Yippy",
-        "audio":"",
+        "audio":"yippy.mp3",
         "level": [
             "#################################",
             "###############      ############",
@@ -364,7 +364,7 @@ const levels = [
         "id": "2016-07-21",
         "num": "20",
         "message":"Who-Ha!",
-        "audio":"",
+        "audio":"whoha.mp3",
         "level": [
             "CSR            ###            TSR",
             "               ###               ",
@@ -383,7 +383,7 @@ const levels = [
         "id": "2011-08-24",
         "num": "21",
         "message":"Holy-Cow",
-        "audio":"",
+        "audio":"holycow.mp3",
         "level": [
             "#################################",
             "#################################",
@@ -402,7 +402,7 @@ const levels = [
         "id": "2016-07-21",
         "num": "22",
         "message":"Oh Yeah",
-        "audio":"",
+        "audio":"ohyeah.mp3",
         "level": [
             "#################################",
             "#################################",
@@ -421,7 +421,7 @@ const levels = [
         "id": "016-07-21",
         "num": "23",
         "message":"Success",
-        "audio":"",
+        "audio":"success.mp3",
         "level": [
             "      #####################      ",
             "                                 ",
@@ -440,7 +440,7 @@ const levels = [
         "id": "2011-08-08",
         "num": "24",
         "message":"Rock On",
-        "audio":"",
+        "audio":"rockon.mp3",
         "level": [
             "                                 ",
             "                                 ",
@@ -459,7 +459,7 @@ const levels = [
         "id": "2011-08-07",
         "num": "25",
         "message":"You the man now dawg!",
-        "audio":"",
+        "audio":"youthemannowdawg.mp3",
         "level": [
             "###            CSR            ###",
             "   ###                     ###   ",
@@ -478,7 +478,7 @@ const levels = [
         "id": "2011-08-03",
         "num": "26",
         "message":"Yippy",
-        "audio":"",
+        "audio":"yippy.mp3",
         "level": [
             "                                 ",
             "               CNR               ",
@@ -496,8 +496,8 @@ const levels = [
     {
         "id": "2011-08-24",
         "num": "27",
-        "message":"Woopie",
-        "audio":"",
+        "message":"Woopee",
+        "audio":"woppee.mp3",
         "level": [
             "#################################",
             "#################################",
@@ -516,7 +516,7 @@ const levels = [
         "id": "2011-06-01",
         "num": "28",
         "message":"Yes",
-        "audio":"",
+        "audio":"yes.mp3",
         "level": [
             "###############TSR###############",
             "############   MNE   ############",
@@ -534,8 +534,8 @@ const levels = [
     {
         "id": "2011-01-04",
         "num": "29",
-        "message":"Incoseavable",
-        "audio":"",
+        "message":"Holy Cow",
+        "audio":"holycow.mp3",
         "level": [
             "(P)            ###            ###",
             "   ###                           ",
@@ -554,7 +554,7 @@ const levels = [
         "id": "2011-08-02",
         "num": "30",
         "message":"Right On",
-        "audio":"",
+        "audio":"righton.mp3",
         "level": [
             "                                 ",
             "   ###         CNR         ###   ",
@@ -573,7 +573,7 @@ const levels = [
         "id": "2011-06-02",
         "num": "31",
         "message":"Glorious",
-        "audio":"",
+        "audio":"glorious.mp3",
         "level": [
             "######      #########      ######",
             "###            ###            ###",
@@ -592,7 +592,7 @@ const levels = [
         "id": "2011-08-10",
         "num": "32",
         "message":"Yes",
-        "audio":"",
+        "audio":"yes.mp3",
         "level": [
             "                                 ",
             "                                 ",
@@ -611,7 +611,7 @@ const levels = [
         "id": "2003-01-03",
         "num": "33",
         "message":"Right On",
-        "audio":"",
+        "audio":"righton.mp3",
         "level": [
             "#################################",
             "###               ###############",
@@ -630,7 +630,7 @@ const levels = [
         "id": "2016-07-21",
         "num": "34",
         "message":"Yes",
-        "audio":"",
+        "audio":"yes.mp3",
         "level": [
             "#################################",
             "#################################",
@@ -648,8 +648,8 @@ const levels = [
     {
         "id": "2011-08-09",
         "num": "35",
-        "message":"Woopie",
-        "audio":"",
+        "message":"Woopee",
+        "audio":"woopee.mp3",
         "level": [
             "                           ###   ",
             "      MNE               ###      ",
@@ -668,7 +668,7 @@ const levels = [
         "id": "2001-06-03",
         "num": "36",
         "message":"Yes",
-        "audio":"",
+        "audio":"yes.mp3",
         "level": [
             "(P)      ########################",
             "   MSE      #####################",
@@ -687,7 +687,7 @@ const levels = [
         "id": "2011-06-04",
         "num": "37",
         "message":"Amazing",
-        "audio":"",
+        "audio":"amazing.mp3",
         "level": [
             "            CWR###TER            ",
             "   MNW                     MNE   ",
@@ -706,7 +706,7 @@ const levels = [
         "id": "2003-02-01",
         "num": "38",
         "message":"Genious",
-        "audio":"",
+        "audio":"genious.mp3",
         "level": [
             "#########      ###      #########",
             "#########      ###      #########",
@@ -725,7 +725,7 @@ const levels = [
         "id": "2003-02-02",
         "num": "39",
         "message":"Glorious",
-        "audio":"",
+        "audio":"glorious.mp3",
         "level": [
             "            TWR###CER            ",
             "   MSE         ###(P)      MSW   ",
@@ -744,7 +744,7 @@ const levels = [
         "id": "2003-02-03",
         "num": "40",
         "message":"Off the hook",
-        "audio":"",
+        "audio":"offthehook.mp3",
         "level": [
             "                              ###",
             "   ###MNE###MNW   ###############",
@@ -763,7 +763,7 @@ const levels = [
         "id": "2003-04-01",
         "num": "41",
         "message":"Wicked Smart",
-        "audio":"",
+        "audio":"wickedsmart.mp3",
         "level": [
             "      ######         ######      ",
             "   MNW         ###         MNE   ",
@@ -782,7 +782,7 @@ const levels = [
         "id": "2011-03-04",
         "num": "42",
         "message":"Geinus",
-        "audio":"",
+        "audio":"geinus.mp3",
         "level": [
             "###                              ",
             "###            ###               ",
@@ -801,7 +801,7 @@ const levels = [
         "id": "2011-08-04",
         "num": "43",
         "message":"Halelujha",
-        "audio":"",
+        "audio":"halelujha.mp3",
         "level": [
             "                                 ",
             "            MNW   MNE            ",
@@ -819,8 +819,8 @@ const levels = [
     {
         "id": "2016-07-21",
         "num": "44",
-        "message":"Out of this world!",
-        "audio":"",
+        "message":"Oh Yeah",
+        "audio":"ohyeah.mp3",
         "level": [
             "#################################",
             "############         ############",
@@ -839,7 +839,7 @@ const levels = [
         "id": "2080-01-01",
         "num": "45",
         "message":"The End",
-        "audio":"",
+        "audio":"theend.mp3",
         "level": [
             "#########   ###      ###   ######",
             "   ###      ###      ###   ###   ",
