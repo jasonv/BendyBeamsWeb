@@ -63,24 +63,31 @@
         <h2><a href="#" onclick="next();">Next</a></h2>
         <script>
             console.log("script start");
-            var levelNum=3;
+            var levelNum=0;
             var c = document.getElementById("myCanvas");
             var ctx = c.getContext("2d");
             var imgCount = 0;
             var img = {}
             var x = 0;
             var y = 0;
-            var curLevel = getLevel(levelNum);
             var squareSize=20;
             console.log("script 2");
+            var curLevel = [];
+            var curCannon=0;
+            curLevel = getLevel(levelNum);
+            curCannon = getCannonInfo();
             
             function next()
             {
                 levelNum++;
                 curLevel = getLevel(levelNum);
+                curCannon = getCannonInfo();
+                console.log(curCannon);
                 drawLevel();
                 ctx.drawImage(img["PPP"], x*squareSize, y*squareSize);
             }
+            
+            
             
 function loadImages()
 {
@@ -119,6 +126,28 @@ function getLevel(n)
         result.push(row);
     }
     return result;
+}
+
+function getCannonInfo()
+{
+    for(let yy=0; yy<11; yy++)
+    {
+        for(let xx=0; xx<11; xx++)
+        { 
+            piece = curLevel[yy][xx];
+            if(piece.substring(0,1)=="C")
+            {
+                let dx=0;
+                let dy=0;
+                if(piece.substring(1,2)=="N") dy=-1;
+                if(piece.substring(1,2)=="E") dx=1;
+                if(piece.substring(1,2)=="S") dy=1;
+                if(piece.substring(1,2)=="W") dy=-1;
+                return [xx,yy,dx,dy];
+            }
+        }
+    }
+    return [0,0,0,0]
 }
 
 function getImageId(level,xx,yy)
@@ -198,6 +227,7 @@ function drawLevel()
                         y=y+dy;
                     }
                 }
+                
             }
             function moveLeft()
             {
