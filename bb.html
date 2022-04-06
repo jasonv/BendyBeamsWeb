@@ -76,7 +76,7 @@
             var curCannon=0;
             curLevel = getLevel(levelNum);
             curCannon = getCannonInfo();
-            
+            curLaser = getLaser();
             function next()
             {
                 levelNum++;
@@ -91,7 +91,7 @@
             
 function loadImages()
 {
-    var ids = ["PPP","ZZZ","SSS","MNE","MSE","MSW","MNW","CNR","CER","CSR","CWR","TNR","TER","TSR","TWR"];
+    var ids = ["PPP","ZZZ","SSS","MNE","MSE","MSW","MNW","CNR","CER","CSR","CWR","TNR","TER","TSR","TWR","SSSC"];
     for(const id of ids)
     {
         img[id] = document.getElementById(id);
@@ -150,6 +150,23 @@ function getCannonInfo()
     return [0,0,0,0]
 }
 
+function getLaser()
+{
+    let result = [];
+    for(let yy=0; yy<11; yy++)
+    {
+        let row = []
+        for(let xx=0; xx<11; xx++)
+        { 
+            row.push(0);
+        }
+        result.push(row);
+    } 
+    let cx,cy,dx,dy = getCannonInfo();
+    result[0][0]=1;
+    return result;      
+}
+
 function getImageId(level,xx,yy)
 {
     let id = level[yy][xx];
@@ -177,7 +194,23 @@ function drawLevel()
             ctx.drawImage(getImage(id), x*squareSize, y*squareSize);
         }
     }
+    drawLaser();
     console.log("done");
+}
+
+function drawLaser()
+{
+    for(let yy=0; yy<11; yy++)
+    {
+        for(let xx=0; xx<11; xx++)
+        {
+            let state = curLaser[yy][xx];
+            if(state==1)
+            {
+                ctx.drawImage(getImage("SSSC"), xx*squareSize, yy*squareSize);
+            }
+        }
+    }
 }
             
             function init() 
