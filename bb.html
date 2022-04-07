@@ -162,8 +162,8 @@ function getLaser()
         }
         result.push(row);
     } 
-    let cx,cy,dx,dy = getCannonInfo();
-    result[0][0]=1;
+    let [cx,cy,dx,dy] = getCannonInfo();
+    result[cy][cx]=1;
     return result;      
 }
 
