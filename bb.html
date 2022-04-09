@@ -146,6 +146,7 @@
 
         function getLaser() {
             let result = [];
+            let laserType = 0;
             for (let yy = 0; yy < 11; yy++) {
                 let row = []
                 for (let xx = 0; xx < 11; xx++) {
@@ -160,24 +161,68 @@
             win = false;
             while(hit==false)
             {
+                laserType=1;
+                if(dy==0) {laserType=2}
                 xx = xx + dx;
                 yy = yy + dy;
                 let peice = curLevel[yy][xx];
                 console.log('Peice: ' + peice);
-                console.log('xx: ' + xx + " yy: " + yy);
-                if(peice=="   ")
+                console.log('xx: ' + xx + " yy: " + yy + " dx:" + dx + " dy: " + dy);
+                if(peice=="   " || peice=="(P)")
                 {
-                    result[yy][xx]=1;
+                    result[yy][xx]=laserType;
                 }
                 else if(peice=="MNE")
                 {
-                    result[yy][xx]=1;
-                    dx=1;
-                    dy=0;
+                    result[yy][xx]=laserType;
+                    if(dx==0 & dy==1)
+                    {
+                        dx=1; dy=0;
+                    }
+                    else if(dx==-1 & dy==0)
+                    {
+                        dx=0; dy=1;
+                    }
+                }
+                else if(peice=="MSE")
+                {
+                    result[yy][xx]=laserType;
+                    if(dx==-1 & dy==0)
+                    {
+                        dx=0; dy=1;
+                    }
+                    else if(dx==0 & dy==-1)
+                    {
+                        dx=1; dy=0;
+                    }
+                }
+                else if(peice=="MSW")
+                {
+                    result[yy][xx]=laserType;
+                    if(dx==1 & dy==0)
+                    {
+                        dx=0; dy=1;
+                    }
+                    else if(dx==0 & dy==-1)
+                    {
+                        dx=-1; dy=0;
+                    }
+                }
+                else if(peice=="MNW")
+                {
+                    result[yy][xx]=laserType;
+                    if(dx==1 & dy==0)
+                    {
+                        dx=0; dy=-1;
+                    }
+                    else if(dx==0 & dy==1)
+                    {
+                        dx=-1; dy=0;
+                    }
                 }
                 else if(peice.substring(0,1)=="T")
                 {
-                    result[yy][xx]=1;
+                    result[yy][xx]=laserType;
                     hit=true;
                     win=true;
                 }
