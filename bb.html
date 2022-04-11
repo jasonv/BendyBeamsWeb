@@ -347,6 +347,10 @@
             return false;
         }
         function spacePushable(dx, dy) {
+            if (x + dx < 0) return false;
+            if (x + dx >= 11) return false;
+            if (y + dy < 0) return false;
+            if (y + dy >= 11) return false;
             let piece = curLevel[y + dy][x + dx];
             if (piece[0] == 'M') return true;
             return false;
