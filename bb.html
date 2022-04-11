@@ -59,7 +59,7 @@
         </canvas>
 
     </div>
-    <h2><a href="#" onclick="next();">Next</a></h2>
+    <h3><a href="#" onclick="next();">Next</a> <a href="#" onclick="reset();">Reset</a></h3>
     <script>
         console.log("script start");
         var levelNum = 4;
@@ -84,7 +84,14 @@
             curLaser = getLaser();
             console.log(curCannon);
             drawLevel();
-            ctx.drawImage(img["PPP"], x * squareSize, y * squareSize);
+        }
+
+        function reset() {
+            curLevel = getLevel(levelNum);
+            curCannon = getCannonInfo();
+            curLaser = getLaser();
+            console.log(curCannon);
+            drawLevel();
         }
 
 
