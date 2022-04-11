@@ -168,7 +168,7 @@
                 let peice = curLevel[yy][xx];
                 console.log('Peice: ' + peice);
                 console.log('xx: ' + xx + " yy: " + yy + " dx:" + dx + " dy: " + dy);
-                if(peice=="   " || peice=="(P)")
+                if(peice=="   ")
                 {
                     result[yy][xx]=laserType;
                 }
@@ -261,7 +261,7 @@
             let id = level[yy][xx];
             if (id == "   ") id = "SSS";
             if (id == "###") id = "ZZZ";
-            if (id == "(P)") id = "SSS";
+            if (id == "(P)") id = "PPP";
             return id;
         }
 
@@ -332,7 +332,7 @@
             loadImages();
             ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
             drawLevel();
-            ctx.drawImage(img["PPP"], x * squareSize, y * squareSize);
+            //ctx.drawImage(img["PPP"], x * squareSize, y * squareSize);
         }
         window.addEventListener("load", init)
         function spaceOpen(dx, dy) {
@@ -353,6 +353,8 @@
         }
         function move(dx, dy) {
             if (spaceOpen(dx, dy)) {
+                curLevel[y + dy][x + dx] = curLevel[y][x];
+                curLevel[y][x] = "   ";
                 x = x + dx;
                 y = y + dy;
             }
@@ -371,22 +373,18 @@
         function moveLeft() {
             move(-1, 0);
             drawLevel();
-            ctx.drawImage(img["PPP"], x * squareSize, y * squareSize);
         }
         function moveRight() {
             move(1, 0);
             drawLevel();
-            ctx.drawImage(img["PPP"], x * squareSize, y * squareSize);
         }
         function moveUp() {
             move(0, -1);
             drawLevel();
-            ctx.drawImage(img["PPP"], x * squareSize, y * squareSize);
         }
         function moveDown() {
             move(0, 1);
             drawLevel();
-            ctx.drawImage(img["PPP"], x * squareSize, y * squareSize);
         }
         window.onload = function () {
             document.addEventListener('swiped-left', function (e) { moveLeft(); });
