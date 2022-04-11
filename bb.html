@@ -183,6 +183,11 @@
                     {
                         dx=0; dy=-1;
                     }
+                    else
+                    {
+                        result[yy][xx]=0;
+                        hit=true;
+                    }
                 }
                 else if(peice=="MSE")
                 {
@@ -194,6 +199,11 @@
                     else if(dx==0 & dy==-1)
                     {
                         dx=1; dy=0;
+                    }
+                    else
+                    {
+                        result[yy][xx]=0;
+                        hit=true;
                     }
                 }
                 else if(peice=="MSW")
@@ -207,6 +217,11 @@
                     {
                         dx=-1; dy=0;
                     }
+                    else
+                    {
+                        result[yy][xx]=0;
+                        hit=true;
+                    }
                 }
                 else if(peice=="MNW")
                 {
@@ -218,6 +233,11 @@
                     else if(dx==0 & dy==1)
                     {
                         dx=-1; dy=0;
+                    }
+                    else
+                    {
+                        result[yy][xx]=0;
+                        hit=true;
                     }
                 }
                 else if(peice.substring(0,1)=="T")
