@@ -1,5 +1,5 @@
         //console.log("script start");
-        var levelNum = 4;
+        var levelNum = 0;
         var c = document.getElementById("myCanvas");
         var ctx = c.getContext("2d");
         var imgCount = 0;
