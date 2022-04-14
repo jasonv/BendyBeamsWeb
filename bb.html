@@ -17,6 +17,7 @@
 
 <body data-swipe-threshold='50'>
     <h1>Bendy Beams</h1>
+    <h2 id="status">&nbsp;</h2>
     <div>
         <img id="CER" src="img/cer.png" style="display:none" />
         <img id="CERO" src="img/cero.png" style="display:none" />
@@ -59,7 +60,8 @@
         </canvas>
 
     </div>
-    <h3><a href="#" onclick="next();">Next</a> <a href="#" onclick="reset();">Reset</a></h3>
+    <h3><a href="#" onclick="reset();">Reset</a></h3>
+    <h4><a href="http://www.jasonv.com/">Created By JasonV</a></h4>
     <script>
         //console.log("script start");
         var levelNum = 4;
@@ -78,6 +80,7 @@
         curCannon = getCannonInfo();
         curLaser = getLaser();
         function next() {
+            document.getElementById("status").innerHTML="&nbsp;"
             win=false;
             levelNum++;
             curLevel = getLevel(levelNum);
@@ -251,6 +254,8 @@
                     result[yy][xx]=laserType;
                     hit=true;
                     win=true;
+                    document.getElementById("status").innerHTML=levels[levelNum].message;
+            
                 }
                 else if(peice.substring(0,1)=="C")
                 {
