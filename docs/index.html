@@ -1,68 +1,68 @@
-<html> 
+<!doctype>
+<html>
+
 <head>
-<style>
-
-p
-{
-font-family:arial;
-}
-
-h1
-{
-font-family:arial;
-padding:0px;
-
-}
-
-
-</style>
-
+    <link rel="apple-touch-icon" sizes="180x180" href="img/icon3.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/ppp.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="bb.css" rel="stylesheet" />
+    <title>Beandy Beams</title>
+    <meta name="viewport"
+        content="width=device-width,height=device-height,user-scalable=no,initial-scale=1,maximum-scale=1" />
+    <script src="swiped-events.js"></script>
+    <script src="bbl.js"></script>
 </head>
-<body bgcolor=#000000 text=#ffffff> 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-23883055-1', 'auto');
-  ga('require', 'displayfeatures'); 
-  ga('send', 'pageview');
+<body data-swipe-threshold='50'>
+    <h1>Bendy Beams</h1>
+    <h2 id="status">Swipe to Start</h2>
+    <div>
+        <img id="CER" src="img/cer.png" style="display:none" />
+        <img id="CERO" src="img/cero.png" style="display:none" />
+        <img id="CNR" src="img/cnr.png" style="display:none" />
+        <img id="CNRO" src="img/cnro.png" style="display:none" />
+        <img id="CSR" src="img/csr.png" style="display:none" />
+        <img id="CSRO" src="img/csro.png" style="display:none" />
+        <img id="CWR" src="img/cwr.png" style="display:none" />
+        <img id="CWRO" src="img/cwro.png" style="display:none" />
 
-</script>
-<basefont face="arial" size="4">
-<center>
-<table cellpadding=20 bgcolor=#333333>
-<tr><td width="600">
-<table cellpadding=0 bgcolor=#333333>
-<tr>
-<td valign="center" align="center"><p><span style="font-size : 36pt; font-weight:bold">Bendy Beams</span></p>
-<p>Welcome to Bendy Beams, the game of reflections!</p>
+        <img id="MNE" src="img/mne.png" style="display:none" />
+        <img id="MNEO" src="img/mneo.png" style="display:none" />
+        <img id="MNW" src="img/mnw.png" style="display:none" />
+        <img id="MNWO" src="img/mnwo.png" style="display:none" />
+        <img id="MSE" src="img/mse.png" style="display:none" />
+        <img id="MSEO" src="img/mseo.png" style="display:none" />
+        <img id="MSW" src="img/msw.png" style="display:none" />
+        <img id="MSWO" src="img/mswo.png" style="display:none" />
 
-<p>Our hero turtle, Herman, is on a mission. The evil Dr. Ben D. Beams has imprisoned him in a maze of mirrors and lazer beams. He will not let Herman go until the brainy turtle is able to solve twenty seperate puzzles, each more difficult than the one before. Only after the final puzzle has been solved will Herman be granted refuge into the waters of the Nile River, his home. </p>
+        <img id="PPP" src="img/ppp.png" style="display:none" />
 
-<p>Help Herman get back home by directing him on how to solve each puzzle!</p>
-<center><a href='https://play.google.com/store/apps/details?id=com.bendybeams.android&hl=en&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' width='50%'/></a>
+        <img id="SSS" src="img/sss.png" style="display:none" />
+        <img id="SSSC" src="img/sssc.png" style="display:none" />
+        <img id="SSSH" src="img/sssh.png" style="display:none" />
+        <img id="SSSV" src="img/sssv.png" style="display:none" />
 
-<p><a target="_new" href=http://www.jasonv.com/>Created by Jason Vroustouris</a></p>
-</center>
+        <img id="TER" src="img/ter.png" style="display:none" />
+        <img id="TERO" src="img/tero.png" style="display:none" />
+        <img id="TNR" src="img/tnr.png" style="display:none" />
+        <img id="TNRO" src="img/tnro.png" style="display:none" />
+        <img id="TSR" src="img/tsr.png" style="display:none" />
+        <img id="TSRO" src="img/tsro.png" style="display:none" />
+        <img id="TWR" src="img/twr.png" style="display:none" />
+        <img id="TWRO" src="img/twro.png" style="display:none" />
 
-</center>
-<td></tr>
-</table> 
-<script type="text/javascript">
+        <img id="ZZZ" src="img/zzz.png" style="display:none" />
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-23883055-1']);
-  _gaq.push(['_trackPageview']);
+        <canvas id="myCanvas" width="220" height="220" style="height:375px; background-color: black;">
+            Your browser does not support the HTML canvas tag.
+        </canvas>
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
+    </div>
+       <script src="bbc.js"></script>
+    <h3><a href="#" id="resetButton" onclickj="reset();">Reset</a></h3>
+<a href=http://www.jasonv.com/tutor target=new id="tutoring"><p>Online Computer Science Tutoring<br/>with JasonV, Bendy Beams Creator<br/>Click here to schedule!</p></a>
+</body>
 
-</script>
-
-</body> 
-</html> 
+</html>

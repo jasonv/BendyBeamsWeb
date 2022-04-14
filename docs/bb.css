@@ -30,7 +30,7 @@ h2
   padding-top: 0px;
   font-family: 'Press Start 2P', cursive;
   text-align: center;
-  color: white;
+  color: yellow;
 }
 
 h3 
@@ -45,12 +45,24 @@ h4
 {
   padding-top: 0px;
   font-family: 'Press Start 2P', cursive;
-  text-align: center;
-  color: white;
+  color: gray;
 }
 
-
-a
+#resetButton
 {
+  color:#1E90aa;
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
   text-decoration: none;
+}
+
+#tutoring
+{
+  padding-top: 5px;
+  color:#404040;
+  font-size: 12px;
+  font-family: 'Press Start 2P';
+  text-align: center;
+  text-decoration: none;
+  line-height: 2;
 }
