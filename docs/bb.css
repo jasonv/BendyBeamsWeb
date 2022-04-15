@@ -22,7 +22,7 @@ h1
   padding-top: 15px;
   font-family: 'Press Start 2P', cursive;
   text-align: center;
-  color: gray;
+  color: white;
 }
 
 h2 
@@ -49,6 +49,14 @@ h4
 }
 
 #resetButton
+{
+  color:#1E90aa;
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+  text-decoration: none;
+}
+
+#soundButton
 {
   color:#1E90aa;
   font-family: 'Press Start 2P', cursive;

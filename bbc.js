@@ -14,14 +14,16 @@ curLevel = getLevel(levelNum);
 curCannon = getCannonInfo();
 curLaser = getLaser();
 
+
 function next() {
 	document.getElementById("status").innerHTML = "&nbsp;"
 	win = false;
 	levelNum++;
+	document.getElementById("status").innerHTML = "Level " + levelNum;
 	curLevel = getLevel(levelNum);
 	curCannon = getCannonInfo();
 	curLaser = getLaser();
-	//console.log(curCannon);
+	//console.log(curCannon);	
 	drawLevel();
 }
 
@@ -45,7 +47,7 @@ function loadImages() {
 		img[id] = document.getElementById(id);
 		img[id].addEventListener('load', function () {
 			imgCount++;
-			console.log(id + ":" + imgCount);
+			//console.log(id + ":" + imgCount);
 		}, false);
 	}
 	//console.log("images loaded");
@@ -111,7 +113,17 @@ function getLaser() {
 		}
 		xx = xx + dx;
 		yy = yy + dy;
-		let peice = curLevel[yy][xx];
+		
+		
+		let peice = "";
+		if(xx >= 0 && xx <=10 && yy >=0 && yy <= 10)
+		{
+		    peice=curLevel[yy][xx];
+		    if(result[yy][xx]>=3)
+		    {
+		        laserType=3;
+		    }
+		}
 		//console.log('xx: ' + xx + " yy: " + yy + " dx:" + dx + " dy: " + dy);
 		if (peice == "   ") {
 			result[yy][xx] = laserType;
@@ -169,9 +181,10 @@ function getLaser() {
 			win = true;
 			document.getElementById("status").innerHTML = levels[levelNum].message;
 
-		} else if (peice.substring(0, 1) == "C") {} else {
-			hit = true;
+		} else {
+		    hit = true;
 		}
+		
 	}
 	return result;
 }
@@ -231,9 +244,11 @@ function drawLaser() {
 					id = id + "O"
 				}
 			}
+			
 			ctx.drawImage(getImage(id), xx * squareSize, yy * squareSize);
 		}
 	}
+	//console.log(curLaser);
 }
 
 function init() {

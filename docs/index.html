@@ -65,14 +65,16 @@
         <img id="TWRO" src="img/twro.png" style="display:none" />
 
         <img id="ZZZ" src="img/zzz.png" style="display:none" />
-
         <canvas id="myCanvas" width="220" height="220" style="height:375px; background-color: black;">
             Your browser does not support the HTML canvas tag.
         </canvas>
 
     </div>
        <script src="bbc.js"></script>
-    <h3><a href="#" id="resetButton" onclick="reset();">Reset</a></h3>
+    <h3><a href="#" id="resetButton" onclick="reset();">Reset</a>
+    &nbsp; &nbsp; &nbsp;
+    <a href="#" id="soundButton" onclick="sound();">Sound</a>
+    </h3>
 <a href=http://www.jasonv.com/tutor target=new id="tutoring"><p>Online Computer Science Tutoring<br/>with JasonV, Bendy Beams Creator<br/>Click here to schedule!</p></a>
 <script type="text/javascript">
 
@@ -86,6 +88,33 @@
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
 
+</script>
+<audio id="myAudio">
+  <source src="audio/satisfying_mountain.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+
+<script>
+var backgroundMusic= document.getElementById("myAudio"); 
+backgroundMusic.loop = true;
+var soundOn = false;
+function sound() { 
+  if(soundOn) 
+  {
+    backgroundMusic.pause(); 
+    soundOn=false;
+  }
+  else
+  {
+    backgroundMusic.play(); 
+    soundOn=true;
+  }
+} 
+
+function pauseAudio() { 
+  
+} 
 </script>
 
 </body>
