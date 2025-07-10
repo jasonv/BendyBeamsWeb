@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState, useCallback } from 'react';
 import { levels } from './levels';  
+import BackgroundAudioPlayer from '@/components/BackgroundAudioPlayer';
 
 const GRID_SIZE = 11;
 const SQUARE_SIZE = 40; // px
@@ -314,7 +315,7 @@ export default function Page() {
       <div>
         <a href="#" id="resetButton" onClick={resetLevel}>Reset</a> 
         &nbsp; &nbsp; &nbsp;
-        <a href="#"id="soundButton">Sound</a>
+        <BackgroundAudioPlayer audioUrl="/audio/satisfying_mountain.mp3" />
       </div>
     </div>
   );
