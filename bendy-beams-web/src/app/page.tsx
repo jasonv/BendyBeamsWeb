@@ -137,6 +137,13 @@ export default function Page() {
 
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [images, setImages] = useState<Record<string, HTMLImageElement>>({});
+  
+  // Touch/swipe state
+  const [touchStart, setTouchStart] = useState<{ x: number; y: number } | null>(null);
+  const [touchEnd, setTouchEnd] = useState<{ x: number; y: number } | null>(null);
+
+  // Minimum distance for a swipe gesture
+  const MIN_SWIPE_DISTANCE = 50;
 
   // Load all images
   useEffect(() => {
@@ -252,6 +259,91 @@ export default function Page() {
     // eslint-disable-next-line
   }, [state.player, state.curLevel, state.win]);
 
+  // Handle swipe gestures
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null); // Reset end touch
+    setTouchStart({
+      x: e.targetTouches[0].clientX,
+      y: e.targetTouches[0].clientY,
+    });
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd({
+      x: e.targetTouches[0].clientX,
+      y: e.targetTouches[0].clientY,
+    });
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    const distanceX = touchStart.x - touchEnd.x;
+    const distanceY = touchStart.y - touchEnd.y;
+    const isLeftSwipe = distanceX > MIN_SWIPE_DISTANCE;
+    const isRightSwipe = distanceX < -MIN_SWIPE_DISTANCE;
+    const isUpSwipe = distanceY > MIN_SWIPE_DISTANCE;
+    const isDownSwipe = distanceY < -MIN_SWIPE_DISTANCE;
+
+    // Determine if this is primarily a horizontal or vertical swipe
+    if (Math.abs(distanceX) > Math.abs(distanceY)) {
+      // Horizontal swipe
+      if (isLeftSwipe) {
+        move(-1, 0); // Move left
+      } else if (isRightSwipe) {
+        move(1, 0); // Move right
+      }
+    } else {
+      // Vertical swipe
+      if (isUpSwipe) {
+        move(0, -1); // Move up
+      } else if (isDownSwipe) {
+        move(0, 1); // Move down
+      }
+    }
+  };
+
+  // Touch events
+  useEffect(() => {
+    const onTouchStart = (e: TouchEvent) => {
+      const touch = e.touches[0];
+      setTouchStart({ x: touch.clientX, y: touch.clientY });
+    };
+
+    const onTouchMove = (e: TouchEvent) => {
+      // Prevent scrolling while touching
+      e.preventDefault();
+    };
+
+    const onTouchEnd = (e: TouchEvent) => {
+      const touch = e.changedTouches[0];
+      setTouchEnd({ x: touch.clientX, y: touch.clientY });
+
+      if (touchStart && Math.abs(touchEnd!.x - touchStart.x) > MIN_SWIPE_DISTANCE) {
+        // Horizontal swipe
+        const dx = touchEnd!.x > touchStart.x ? 1 : -1;
+        move(dx, 0);
+      } else if (touchStart && Math.abs(touchEnd!.y - touchStart.y) > MIN_SWIPE_DISTANCE) {
+        // Vertical swipe
+        const dy = touchEnd!.y > touchStart.y ? 1 : -1;
+        move(0, dy);
+      }
+      setTouchStart(null);
+      setTouchEnd(null);
+    };
+
+    const canvas = canvasRef.current;
+    canvas?.addEventListener('touchstart', onTouchStart);
+    canvas?.addEventListener('touchmove', onTouchMove);
+    canvas?.addEventListener('touchend', onTouchEnd);
+
+    return () => {
+      canvas?.removeEventListener('touchstart', onTouchStart);
+      canvas?.removeEventListener('touchmove', onTouchMove);
+      canvas?.removeEventListener('touchend', onTouchEnd);
+    };
+  }, [touchStart, touchEnd]);
+
   // Next and Reset
   const nextLevel = useCallback(() => {
     const newLevelNum = (state.levelNum + 1) % levels.length;
@@ -309,8 +401,11 @@ export default function Page() {
         ref={canvasRef}
         width={GRID_SIZE * SQUARE_SIZE}
         height={GRID_SIZE * SQUARE_SIZE}
-        style={{ height: '375px', backgroundColor: 'black' }}
+        style={{ height: '375px', backgroundColor: 'black', touchAction: 'none' }}
         tabIndex={0}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
       />
       <div>
         <a href="#" id="resetButton" onClick={resetLevel}>Reset</a> 
