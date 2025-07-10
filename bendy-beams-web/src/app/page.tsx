@@ -412,6 +412,7 @@ export default function Page() {
         &nbsp; &nbsp; &nbsp;
         <BackgroundAudioPlayer audioUrl="/audio/satisfying_mountain.mp3" />
       </div>
+      <a href="http://www.jasonv.com/tutor" target="new" id="tutoring"><p>Online Computer Science Tutoring<br/>with JasonV, Bendy Beams Creator<br/>Click here to schedule!</p></a>
     </div>
   );
 }
