@@ -5,6 +5,7 @@ import { levels } from './levels';
 
 const GRID_SIZE = 11;
 const SQUARE_SIZE = 40; // px
+const NEXT_LEVEL_DELAY = 1000; // ms
 
 const imageIds = [
   'CER', 'CERO', 'CNR', 'CNRO', 'CSR', 'CSRO', 'CWR', 'CWRO',
@@ -292,7 +293,7 @@ export default function Page() {
     if (state.win) {
       const timeout = setTimeout(() => {
         nextLevel();
-      }, 2000);
+      }, NEXT_LEVEL_DELAY);
       return () => clearTimeout(timeout);
     }
   }, [state.win, nextLevel]);
