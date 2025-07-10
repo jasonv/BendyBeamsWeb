@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden; 
+  background-color: #101010;
+}
+
+div
+{ 
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1
+{
+  font-size: 35px;
+  padding-top: 15px;
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+  color: white;
+}
+
+h2 
+{
+  font-size: 25px;
+  padding-top: 0px;
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+  color: yellow;
+}
+
+h3 
+{
+  padding-top: 0px;
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+  color: white;
+}
+
+h4
+{
+  padding-top: 0px;
+  font-family: 'Press Start 2P', cursive;
+  color: gray;
+}
+
+#resetButton
+{
+  font-size: 25px;
+  color:#1E90aa;
+  font-family: 'Press Start 2P', cursive;
+  text-align: left;
+  text-decoration: none;
+}
+
+#soundButton
+{
+  font-size: 25px;
+  color:#1E90aa;
+  font-family: 'Press Start 2P', cursive;
+  text-align: right;
+  text-decoration: none;
+}
+
+#tutoring
+{
+  padding-top: 5px;
+  color:#404040;
+  font-size: 8px;
+  font-family: 'Press Start 2P';
+  text-align: center;
+  text-decoration: none;
+  line-height: 2;
+}
